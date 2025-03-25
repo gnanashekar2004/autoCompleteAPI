@@ -7,10 +7,10 @@ async function testAPI(query) {
     try {
         const response = await axios.get(`${BASE_URL}?query=${query}`);
         console.log(`Query: ${query} -> Response:`, response.data);
-        fs.appendFileSync('api_responses.log', `Query: ${query} -> ${JSON.stringify(response.data)}\n`);
+        fs.appendFileSync('api_responses_s1.log', `Query: ${query} -> ${JSON.stringify(response.data)}\n`);
     } catch (error) {
         console.error(`Error querying '${query}':`, error.response ? error.response.data : error.message);
-        fs.appendFileSync('api_errors.log', `Query: ${query} -> ${error.message}\n`);
+        fs.appendFileSync('api_errors_s1.log', `Query: ${query} -> ${error.message}\n`);
     }
 }
 
